@@ -7,15 +7,30 @@ const noteBody=ref("");
 const noteTitle=ref("");
 const notes =ref([]);
 
+const getRandomColor=()=>{
+return "hsl("+Math.random()*360+",100,75%)";
 
+}
+ const resetForm =()=>{
+  noteBody.value="";
+  noteTitle.value="";
+ }
 
 const toggleModal=()=>{
 openModal.value=!openModal.value;
 }
 const addNote=()=>{
-  notes.value.push({"title":noteTitle.value,
-"body":noteBody.value});
+  notes.value.push({
+    id:Math.floor(Math.random()*1000),
+    title:noteTitle.value,
+body:noteBody.value,
+date:new Date(),
+backgroundColor:getRandomColor(),
+
+});
+
 toggleModal();
+resetForm();
 
 }
 
@@ -48,14 +63,13 @@ toggleModal();
         <h1>Notes {{openModal}}</h1>
         <button class="btn-add" @click="toggleModal">+</button>
       </header>
-      <section class="cards-container">
-        {{ notes }}
-        <NoteCard/>
-        <NoteCard/>
-        <NoteCard/>
-        <NoteCard/>
-        <NoteCard/>
-        <NoteCard/>
+      {{ notes }}
+      <section
+  class="cards-container">
+
+   
+<NoteCard :noteList="notes"/>
+    
 
       </section>
     </div>
