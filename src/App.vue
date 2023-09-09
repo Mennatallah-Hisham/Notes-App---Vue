@@ -42,28 +42,9 @@ toggleModal();
 <template>
 
   <main>
-<Form v-if="openModal" :closeModal="toggleModal" :addNote="addNote" @createNote="addNote"/>
-<RouterView/>
+<Form v-if="openModal" :closeModal="toggleModal"  @createNote="addNote"/>
 
- <!-- <div v-if="openModal" class="overlay">
-      <div class="modal">
-        <form class="form">
-          <input v-model.trim="noteTitle" type="text" placeholder="title"/>
 
-          <textarea v-model="noteBody" name="note" id="note" cols="30" rows="10"></textarea>
-          <div class="btns">
-            <button @click="addNote" class="form__btn">
-              add note
-  
-            </button> <button  @click="toggleModal" class="form__btn">
-         close
-  
-            </button>
-          </div>
-         
-        </form>
-      </div>
-    </div>  -->
     <div class="container">
 <Header :btnHandler="toggleModal"></Header>
 
@@ -101,28 +82,6 @@ main{
   flex-wrap: wrap;
 }
 
-.overlay{
-  position: absolute;
-  width:100%;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.37);
-  z-index: 10;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.modal{
-  background-color: white;
-  padding:3rem 6rem;
-  border-radius: 0.4rem;
-  width:50rem;
-}
-.form{
-  display: flex;
-  flex-direction: column;
-  gap:1rem;
-  width:100%;
 
-}
 
 </style>

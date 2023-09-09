@@ -18,6 +18,7 @@ header{
   }
   h1{
     font-weight: 800;
+    color:black;
   }
   .btn-add{
     background-color: black;
