@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 defineProps(['closeModal']);
-// const emit = defineEmits('createNote');
+
 const noteBody=ref("");
 const noteTitle=ref("");
 
@@ -74,26 +74,6 @@ const noteTitle=ref("");
     gap:1rem;
 
   }
-  button{
-    cursor: pointer;
-    text-transform: capitalize;
-    outline:none;
-    border-radius: 0.4rem;
-  }
-
-
-
-  .btn-filled{
-    background-color: black;
-    color:white;
-    padding:0.5rem 2rem
-  }
-  .btn-outline{
-    background-color: white;
-    color:black;
-    border:1px solid black;
-    padding:0.5rem 2rem
-  }
-
+ 
 
 </style>

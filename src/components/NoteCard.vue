@@ -4,6 +4,8 @@ const props = defineProps(['noteList'])
 
 </script>
 <template>
+  <div>
+
   <article 
   v-for="note in props.noteList" 
   :key="note.id"
@@ -14,9 +16,19 @@ const props = defineProps(['noteList'])
 
     <p class="title">{{ note.title }}</p>
     <p class="body">{{ note.body }}</p>
+    <div class="card-footer">
+      <p class="date">{{ note.date.toLocaleDateString('en-US') }}</p>
+      <button
+      class="btn-filled"
+       @click="$emit('delete',note.id)">delete</button>
+   
+     
+    </div>
+  
+       
 
-    <p class="date">{{ note.date.toLocaleDateString('en-US') }}</p>
   </article>
+</div>
 </template>
 
 <style scoped>
@@ -38,10 +50,18 @@ const props = defineProps(['noteList'])
 .body{
   padding:1rem 0;
 }
+.card-footer{
+  margin-top:3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+}
 .date{
     font-size: 1.2rem;
     font-weight: 600;
-    margin-top:5rem;
+
+
 
 
 }

@@ -3,21 +3,17 @@ import NoteCard from './components/NoteCard.vue';
 import { ref } from 'vue';
 import Header from './components/Header.vue';
 import Form from"./components/Form.vue";
-import {RouterView} from"vue-router";
+
 
 const openModal=ref(false);
-// const noteBody=ref("");
-// const noteTitle=ref("");
+
 const notes =ref([]);
 
 const getRandomColor=()=>{
 return "hsl("+Math.random()*360+",70%,90%)";
 
 }
-//  const resetForm =()=>{
-//   noteBody.value="";
-//   noteTitle.value="";
-//  }
+
 
 const toggleModal=()=>{
 openModal.value=!openModal.value;
@@ -37,6 +33,10 @@ toggleModal();
 
 
 }
+const deleteNote=(id)=>{
+
+  notes.value=notes.value.filter((note)=>note.id!==id);
+}
 
 </script>
 <template>
@@ -52,7 +52,7 @@ toggleModal();
   class="cards-container">
 
    
-<NoteCard :noteList="notes"/>
+<NoteCard :noteList="notes" @delete="deleteNote"/>
     
 
       </section>
