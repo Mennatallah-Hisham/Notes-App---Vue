@@ -5,16 +5,27 @@
 </script>
 <template>
     <header>
+        <div class="header-cont">
+
+        
         <h1>Notes</h1>
         <button class="btn-add" @click="btnHandler">+</button>
+    </div>
       </header>
 </template>
 
 <style scoped>
 header{
+    padding:2rem 0;
+ 
+
+    background-color: #faf0e6;
+  }
+  .header-cont{
+    max-width: 1200px;
+    margin-inline: auto;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 3rem;
   }
   h1{
     font-weight: 800;

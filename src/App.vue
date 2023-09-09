@@ -43,10 +43,10 @@ toggleModal();
 
   <main>
 <Form v-if="openModal" :closeModal="toggleModal"  @createNote="addNote"/>
-
+<Header :btnHandler="toggleModal"></Header>
 
     <div class="container">
-<Header :btnHandler="toggleModal"></Header>
+
 
       <section
   class="cards-container">
@@ -70,7 +70,7 @@ main{
   max-width: 1200px;
   margin-inline: auto;
   padding:2rem 5rem;
-  border:1px solid red;
+
 }
 
 
