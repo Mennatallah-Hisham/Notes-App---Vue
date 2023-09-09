@@ -8,7 +8,7 @@ const noteTitle=ref("");
 const notes =ref([]);
 
 const getRandomColor=()=>{
-return "hsl("+Math.random()*360+",100,75%)";
+return "hsl("+Math.random()*360+",70%,75%)";
 
 }
  const resetForm =()=>{
@@ -42,7 +42,7 @@ resetForm();
  <div v-if="openModal" class="overlay">
       <div class="modal">
         <form class="form">
-          <input v-model="noteTitle" type="text" placeholder="title"/>
+          <input v-model.trim="noteTitle" type="text" placeholder="title"/>
 
           <textarea v-model="noteBody" name="note" id="note" cols="30" rows="10"></textarea>
           <div class="btns">
@@ -63,7 +63,7 @@ resetForm();
         <h1>Notes {{openModal}}</h1>
         <button class="btn-add" @click="toggleModal">+</button>
       </header>
-      {{ notes }}
+
       <section
   class="cards-container">
 

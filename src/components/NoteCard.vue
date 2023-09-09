@@ -8,21 +8,33 @@ const props = defineProps(['noteList'])
   v-for="note in props.noteList" 
   :key="note.id"
   class="card" 
-  :style="{backgroundColor: note.backgroundColor }">
-    {{ note.backgroundColor }}
+ 
+  :style="{backgroundColor: note.backgroundColor}">
 
-    <p>{{ note.title }}</p>
+
+    <p class="title">{{ note.title }}</p>
     <p>{{ note.body }}</p>
 
-    <p>{{ note.date.toLocaleDateString('en-US') }}</p>
+    <p class="date">{{ note.date.toLocaleDateString('en-US') }}</p>
   </article>
 </template>
 
 <style scoped>
 .card {
-  border: 1px solid yellow;
+
   padding:2rem;
   width:24rem;
-  background-color: aquamarine;
+  color:black;
+  border-radius: 2rem;
+
+}
+.title{
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+.date{
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 </style>
