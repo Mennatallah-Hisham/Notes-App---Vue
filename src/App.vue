@@ -11,7 +11,7 @@ const openModal=ref(false);
 const notes =ref([]);
 
 const getRandomColor=()=>{
-return "hsl("+Math.random()*360+",70%,75%)";
+return "hsl("+Math.random()*360+",70%,90%)";
 
 }
 //  const resetForm =()=>{
@@ -78,7 +78,7 @@ main{
 .cards-container{
   display: flex;
   justify-content:left;
-  gap:1rem;
+  gap:3rem;
   flex-wrap: wrap;
 }
 

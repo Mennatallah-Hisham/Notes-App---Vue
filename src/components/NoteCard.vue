@@ -13,7 +13,7 @@ const props = defineProps(['noteList'])
 
 
     <p class="title">{{ note.title }}</p>
-    <p>{{ note.body }}</p>
+    <p class="body">{{ note.body }}</p>
 
     <p class="date">{{ note.date.toLocaleDateString('en-US') }}</p>
   </article>
@@ -27,14 +27,22 @@ const props = defineProps(['noteList'])
   color:black;
   border-radius: 2rem;
 
+  overflow: hidden;
+
 }
 .title{
     text-transform: capitalize;
     font-size: 1.5rem;
     font-weight: 800;
 }
+.body{
+  padding:1rem 0;
+}
 .date{
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 600;
+    margin-top:5rem;
+
+
 }
 </style>
