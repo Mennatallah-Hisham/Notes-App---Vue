@@ -1,6 +1,7 @@
 <script setup>
 import NoteCard from './components/NoteCard.vue';
 import { ref } from 'vue';
+import Header from './components/Header.vue';
 
 const openModal=ref(false);
 const noteBody=ref("");
@@ -59,10 +60,7 @@ resetForm();
       </div>
     </div> 
     <div class="container">
-      <header>
-        <h1>Notes {{openModal}}</h1>
-        <button class="btn-add" @click="toggleModal">+</button>
-      </header>
+<Header :btnHandler="toggleModal"></Header>
 
       <section
   class="cards-container">
@@ -88,26 +86,9 @@ main{
   padding:2rem 5rem;
   border:1px solid red;
 }
-header{
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 3rem;
-}
-h1{
-  font-weight: 800;
-}
 
-.btn-add{
-  background-color: black;
-  color:white;
-  padding:0.5rem 1.5rem;
-  border-radius: 50%;
-  font-size: 3rem;
-  cursor: pointer;
-}
-button:hover{
-  background-color: rgb(38, 37, 37);
-}
+
+
 .cards-container{
   display: flex;
   justify-content:left;
