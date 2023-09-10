@@ -1,17 +1,18 @@
 <script setup> 
 
 const props = defineProps(['noteList'])
+const emit =defineEmits(['delete']);
 
 </script>
 <template>
-  <div>
-
-  <article 
-  v-for="note in props.noteList" 
+  <div  v-for="note in props.noteList" 
   :key="note.id"
   class="card" 
  
   :style="{backgroundColor: note.backgroundColor}">
+
+  <article 
+ >
 
 
     <p class="title">{{ note.title }}</p>

@@ -77,9 +77,10 @@ main{
 
 .cards-container{
   display: flex;
-  justify-content:left;
+  justify-content:center;
   gap:3rem;
   flex-wrap: wrap;
+
 }
 
 
